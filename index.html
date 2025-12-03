@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sai Rahul Bhat | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== ROOT THEME COLORS ===== */
+    :root {
+      --bg-dark: #050816;
+      --bg-gradient: radial-gradient(circle at top, #1e263a 0%, #090d18 50%, #000 100%);
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --accent1: #7b5cff;
+      --accent2: #4fd3ff;
+      --text: #f0f4ff;
+      --muted: #a9b4ce;
+      --radius: 18px;
+      --glow: 0 0 18px rgba(100, 140, 255, 0.6);
+      --transition: 0.25s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== PARTICLES BACKGROUND ===== */
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 10, 0.4);
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 50;
+    }
+
+    nav {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      margin-left: 20px;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: var(--accent2);
+      text-shadow: var(--glow);
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent1), var(--accent2));
+      box-shadow: var(--glow);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 70px auto;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: linear-gradient(45deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-card {
+      flex: 0.9;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--glow);
+      transition: var(--transition);
+      animation: fadeInRight 1s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(130, 180, 255, 0.6);
+    }
+
+    .avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      background: linear-gradient(45deg, var(--accent1), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: var(--glow);
+    }
+
+    /* ===== SKILLS CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--glass-bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--glow);
+      border-color: var(--accent2);
+    }
+
+    .pill {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+      display: inline-block;
+      margin: 4px;
+      transition: var(--transition);
+    }
+
+    .pill:hover {
+      background: linear-gradient(45deg, var(--accent1), var(--accent2));
+      color: #000;
+    }
+
+    /* ===== PROJECT CARDS ===== */
+    .project {
+      padding: 20px;
+      border-radius: var(--radius);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      transition: var(--transition);
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent2);
+      box-shadow: var(--glow);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: var(--glass-bg);
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glow);
+    }
+
+    .link-pill {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 18px;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .link-pill:hover {
+      background: linear-gradient(45deg, var(--accent1), var(--accent2));
+      color: #000;
+      box-shadow: var(--glow);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PARTICLES -->
+  <canvas id="particles"></canvas>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <div class="logo">
+        <div class="logo-dot"></div> Rahul's Portfolio
+      </div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        Hi, I’m <span class="highlight">Rahul</span><br>
+        Engineering my way into <span class="highlight">VLSI & High-Performance Systems</span>.
+      </h1>
+
+      <p style="margin: 20px 0; color: var(--muted);">
+        I’m an 18-year-old ECE student building strong foundations in VLSI, Python, C, MATLAB, and digital electronics.
+        Focused on discipline, growth, and global opportunities.
+      </p>
+    </div>
+
+<div class="hero-card">
+  <div style="display:flex; align-items:center; gap:20px;">
+
+    <!-- Avatar -->
+    <div class="avatar">S</div>
+
+    <!-- Name + Title -->
+    <div>
+      <h2 style="font-size:1.3rem; font-weight:600; margin:0;">
+        Sai Rahul Bhat
+      </h2>
+      <h3 style="margin:4px 0 6px; font-size:0.95rem; color:var(--accent2);">
+        ECE • B.Tech 2027
+      </h3>
+      <p style="color: var(--muted); font-size: 0.88rem; margin:0;">
+       Building expertise in Digital Design, VLSI logic systems, and deep-level circuit engineering.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="title">About Me</div>
+    <div class="subtitle">Who I am beyond academics</div>
+
+    <div class="card">
+      <p>
+        I'm Rahul, an Electronics and Communication Engineering student with a deep interest in VLSI, digital logic,
+        embedded concepts, and system-level engineering.
+      </p>
+      <br>
+      <p>
+        I believe in strong fundamentals, consistent discipline, and learning through hands-on projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="title">Skills</div>
+    <div class="subtitle">What I'm building my foundations on</div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Programming</h3>
+        <span class="pill">C</span>
+        <span class="pill">Python</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">Data Structures (learning)</span>
+      </div>
+
+      <div class="card">
+        <h3>ECE & VLSI</h3>
+        <span class="pill">Digital Electronics</span>
+        <span class="pill">Signals & Systems</span>
+        <span class="pill">DSP</span>
+        <span class="pill">Verilog (learning)</span>
+      </div>
+
+      <div class="card">
+        <h3>Tools</h3>
+        <span class="pill">Vivado</span>
+        <span class="pill">Xilinx ISE</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">Cadence</span>
+      </div>
+    </div>
+  </section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="title">Projects</div>
+  <div class="subtitle">My hands-on learning journey</div>
+
+  <div class="grid">
+
+    <!-- Project 1 -->
+    <div class="project">
+      <h3>Pet Simulator – Python</h3>
+      <p style="color: var(--muted); margin: 10px 0;">
+        A Python-based simulation game where users can feed, grow, and manage virtual pets.
+      </p>
+      <a href="https://github.com/GsrBhat/Virtual-Pet-Simulator" class="link-pill">View Project</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <h3>16-Bit Pipelined ALU – Verilog</h3>
+      <p style="color: var(--muted); margin: 10px 0;">
+        Designed a 16-bit pipelined ALU supporting arithmetic and logical operations.
+      </p>
+      <a href="https://github.com/GsrBhat/-16-bit-pipelined-ALU" class="link-pill">View Project</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <h3>RISC-V (5-Staged CPU) – Verilog</h3>
+      <p style="color: var(--muted); margin: 10px 0;">
+        Built a fully functional pipelined RISC-V CPU supporting a subset of core instructions.
+      </p>
+      <a href="https://github.com/GsrBhat/riscv-pipelined-cpu" class="link-pill">View Project</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project">
+      <h3>4×4 Barrel Shifter – Verilog</h3>
+      <p style="color: var(--muted); margin: 10px 0;">
+        Designed a 4×4 barrel shifter capable of logical and rotational shifts.
+      </p>
+      <a href="https://github.com/GsrBhat/4x4-Barrel-Shifter" class="link-pill">View Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="margin-top: 80px;">
+  <div class="title">Contact Me</div>
+  <div class="subtitle">Let's connect and build something meaningful</div>
+
+  <div class="contact">
+    <p><b>Email:</b> gsrbhat20@gmail.com</p>
+    <p><b>Phone:</b> +91 7989035770</p>
+
+    <br>
+
+    <a href="https://www.linkedin.com/in/sairahulbhatg" class="link-pill">LinkedIn</a>
+    <a href="https://github.com/GsrBhat" class="link-pill">GitHub</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center; margin:120px 0 40px; color:var(--muted);">
+  © <span id="year"></span> Sai Rahul Bhat — All Rights Reserved
+</footer>
+
+
+  <!-- PARTICLES SCRIPT -->
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.3 - 0.15;
+        this.speedY = Math.random() * 0.3 - 0.15;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = "rgba(255,255,255,0.7)";
+        ctx.fillRect(this.x, this.y, this.size, this.size);
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 90; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
