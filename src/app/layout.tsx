@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroller from "@/components/layout/SmoothScroller";
 import CustomCursor from "@/components/ui/CustomCursor";
@@ -9,19 +9,14 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "SAI | Future VLSI Engineer & Semiconductor Innovator",
-  description: "Next-generation personal portfolio of SAI - FPGA Developer, Signal Processing Enthusiast, and Semiconductor Innovator.",
+  title: "Sai Rahul Bhat | VLSI Design & RTL Engineer",
+  description: "Premium personal portfolio of Sai Rahul Bhat - Electronics & Communication Engineering student passionate about VLSI Design, Semiconductor Technology, RTL Design, and Digital Systems.",
 };
 
 export default function RootLayout({
@@ -32,10 +27,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} dark`}
+      className={`${inter.variable} ${spaceGrotesk.variable} dark`}
       style={{ colorScheme: "dark" }}
     >
-      <body className={`${inter.className} min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-black`}>
+      <body className={`${inter.className} min-h-screen bg-[#050816] text-[#e8eaf0] overflow-x-hidden selection:bg-primary selection:text-black`}>
         <SmoothScroller>
           <CustomCursor />
           {children}
@@ -44,3 +39,4 @@ export default function RootLayout({
     </html>
   );
 }
+

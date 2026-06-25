@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, Float, Preload, Sparkles } from "@react-three/drei";
 import { motion } from "framer-motion";
@@ -11,42 +11,58 @@ import HoloButton from "../ui/HoloButton";
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
+  const [sparkleCount, setSparkleCount] = useState(1000);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!textRef.current) return;
-    
-    // Simple text scramble / reveal effect using GSAP
-    const chars = textRef.current.querySelectorAll('.char');
-    gsap.fromTo(chars, 
-      { opacity: 0, y: 50, filter: "blur(10px)" },
-      { 
-        opacity: 1, 
-        y: 0, 
-        filter: "blur(0px)",
-        stagger: 0.1, 
-        duration: 1.5, 
-        ease: "power3.out",
-        delay: 0.5
-      }
-    );
+    // Check screen size for optimizations
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      setSparkleCount(mobile ? 300 : 1200);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    if (textRef.current) {
+      const chars = textRef.current.querySelectorAll('.char');
+      gsap.fromTo(chars, 
+        { opacity: 0, y: 30, filter: "blur(8px)" },
+        { 
+          opacity: 1, 
+          y: 0, 
+          filter: "blur(0px)",
+          stagger: 0.05, 
+          duration: 1.2, 
+          ease: "power3.out",
+          delay: 0.3
+        }
+      );
+    }
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const title = "G. Sai Rahul Bhat".split('');
+  const nameParts = "Sai Rahul Bhat".split('');
 
   return (
-    <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050816] blueprint-grid">
+      
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+        <Canvas camera={{ position: [0, 0, 8], fov: 45 }} gl={{ antialias: !isMobile }}>
           <ambientLight intensity={0.2} />
-          <directionalLight position={[10, 10, 5]} intensity={1} color="#00d2ff" />
-          <spotLight position={[-10, 10, 10]} angle={0.3} penumbra={1} intensity={2} color="#3a0ca3" />
+          <directionalLight position={[10, 10, 5]} intensity={1.5} color="#3B82F6" />
+          <spotLight position={[-10, 10, 10]} angle={0.3} penumbra={1} intensity={2.5} color="#6366F1" />
           
-          <Float speed={2} rotationIntensity={0.5} floatIntensity={2}>
-            <ChipModel />
-          </Float>
+          {!isMobile && (
+            <Float speed={1.5} rotationIntensity={0.4} floatIntensity={1.5}>
+              <ChipModel />
+            </Float>
+          )}
           
-          <Sparkles count={2000} scale={20} size={1.5} speed={0.4} color="#00d2ff" opacity={0.6} />
+          <Sparkles count={sparkleCount} scale={15} size={1.2} speed={0.3} color="#06B6D4" opacity={0.5} />
           
           <Environment preset="city" />
           <Preload all />
@@ -54,60 +70,64 @@ export default function Hero() {
       </div>
 
       {/* Foreground Content */}
-      <div ref={containerRef} className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+      <div ref={containerRef} className="relative z-10 container mx-auto px-4 md:px-8 lg:px-12 flex flex-col items-center text-center mt-12 md:mt-0">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-6 inline-block py-1 px-3 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-widest uppercase backdrop-blur-md"
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-4 inline-block py-1 px-3 rounded-full border border-cyan/30 bg-cyan/5 text-cyan text-[10px] md:text-xs font-semibold tracking-widest uppercase backdrop-blur-md font-sans"
         >
-          System Initialized
+          Silicon & RTL Architect
         </motion.div>
         
-        <h1 ref={textRef} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 text-white">
-          {title.map((char, index) => (
+        <h1 ref={textRef} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tight mb-4 text-white leading-none">
+          {nameParts.map((char, index) => (
             <span key={index} className="char inline-block">{char === ' ' ? '\u00A0' : char}</span>
           ))}
         </h1>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="space-y-2 mb-10"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="space-y-4 mb-8"
         >
-          <h2 className="text-xl md:text-3xl font-bold text-gray-300">Future VLSI Architect <span className="text-primary mx-2">|</span> RTL & FPGA Engineer</h2>
-          <p className="text-sm md:text-base text-gray-400 max-w-lg mx-auto mt-4">Building Intelligent Semiconductor Systems</p>
+          <h2 className="text-lg md:text-2xl font-bold text-gray-300">
+            Future VLSI Engineer <span className="text-cyan">|</span> RTL Design & FPGA Developer
+          </h2>
+          <p className="text-sm md:text-base text-gray-400 max-w-xl mx-auto font-sans leading-relaxed">
+            Samsung ISWDP Cohort 8 Fellow building next-generation digital circuits, microprocessor architectures, and semiconductor technology.
+          </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="flex flex-col sm:flex-row gap-4"
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
         >
-          <HoloButton glowColor="primary" className="w-full sm:w-auto" href="#projects">
-            View Projects
+          <HoloButton glowColor="primary" className="w-full sm:w-auto text-cyan border-cyan/20" href="#projects">
+            Explore Silicon Projects
           </HoloButton>
-          <HoloButton glowColor="accent" className="w-full sm:w-auto bg-transparent border-white/20" href="/resume.pdf" download target="_blank">
-            Download Resume
+          <HoloButton glowColor="accent" className="w-full sm:w-auto bg-transparent border-white/10" href="/resume.pdf" download target="_blank">
+            Get Resume
           </HoloButton>
-          <HoloButton glowColor="secondary" className="w-full sm:w-auto bg-transparent border-white/20" href="#contact">
-            Contact Me
+          <HoloButton glowColor="secondary" className="w-full sm:w-auto bg-transparent border-white/10" href="#contact">
+            Initialize Connection
           </HoloButton>
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
       >
-        <span className="text-xs text-gray-500 uppercase tracking-widest">Scroll</span>
+        <span className="text-[10px] text-gray-500 uppercase tracking-widest font-sans">Scroll</span>
         <motion.div 
-          className="w-0.5 h-16 bg-gradient-to-b from-primary to-transparent"
+          className="w-0.5 h-12 bg-gradient-to-b from-cyan to-transparent"
           animate={{ scaleY: [0, 1, 0], transformOrigin: ["top", "top", "bottom"] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
         />
@@ -115,3 +135,4 @@ export default function Hero() {
     </section>
   );
 }
+

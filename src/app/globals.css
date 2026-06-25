@@ -1,29 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0A0F1C;
-  --foreground: #ededed;
+  --background: #050816;
+  --foreground: #e8eaf0;
+  --card: #0B1120;
   
-  --primary: #00E5FF;
-  --primary-glow: rgba(0, 229, 255, 0.4);
+  --primary: #3B82F6; /* Electric Blue */
+  --indigo: #6366F1; /* Indigo */
+  --cyan: #06B6D4; /* Cyan */
+  --emerald: #10B981; /* Emerald */
+  --purple: #a855f7; /* Soft Purple */
   
-  --secondary: #7C4DFF;
-  --secondary-glow: rgba(124, 77, 255, 0.4);
-  
-  --accent: #00BFFF;
-  
-  --glass-bg: rgba(17, 24, 39, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(11, 17, 32, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.06);
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-indigo: var(--indigo);
+  --color-cyan: var(--cyan);
+  --color-emerald: var(--emerald);
+  --color-purple: var(--purple);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
 
 body {
@@ -33,28 +35,57 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Headings apply display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  letter-spacing: -0.02em;
+}
+
 /* Glassmorphism utilities */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
-.text-gradient {
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+.text-gradient-cyan {
+  background: linear-gradient(90deg, var(--cyan), var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.neon-border {
-  border: 1px solid var(--primary);
-  box-shadow: 0 0 10px var(--primary-glow), inset 0 0 10px var(--primary-glow);
+.text-gradient-indigo {
+  background: linear-gradient(90deg, var(--primary), var(--indigo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Hide scrollbar for cleaner look */
+/* Blueprint Grid Pattern */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+}
+
+/* Circuit trace animation */
+.circuit-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawCircuit 8s linear infinite;
+}
+
+@keyframes drawCircuit {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -62,9 +93,10 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
+  background: rgba(99, 102, 241, 0.3);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--cyan);
 }
+

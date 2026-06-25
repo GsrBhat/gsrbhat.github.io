@@ -1,107 +1,101 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-
-const experiences = [
-  {
-    year: "Recent",
-    title: "Python Internship",
-    role: "Vault of Codes",
-    desc: "Gained hands-on experience in Python development, strengthening software fundamentals critical for hardware-software co-design and scripting in VLSI workflows.",
-  },
-  {
-    year: "Ongoing",
-    title: "Self-Directed HDL Development",
-    role: "Independent Researcher",
-    desc: "Continuously designing and verifying complex RTL architectures using Verilog and SystemVerilog, focusing on pipelined processor designs and arithmetic logic units.",
-  },
-  {
-    year: "Ongoing",
-    title: "FPGA & RTL Learning Journey",
-    role: "Hardware Prototyping",
-    desc: "Mastering Xilinx Vivado for synthesis, implementation, and bitstream generation. Bridging the gap between simulation and real-world silicon behavior.",
-  }
-];
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin, Terminal } from "lucide-react";
 
 export default function Experience() {
-  const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"],
-  });
-
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
   return (
-    <section id="experience" ref={containerRef} className="py-24 relative">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+    <section id="experience" className="py-20 bg-[#050816] relative overflow-hidden blueprint-grid">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-4xl relative z-10">
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Trajectory</h2>
-          <p className="text-gray-400">My professional and academic path in the semiconductor space.</p>
+          <h2 className="text-3xl md:text-5xl font-black mb-4 text-white">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-primary">Journey</span>
+          </h2>
+          <p className="text-gray-400 font-sans text-sm md:text-base">
+            My industry internship work and practical application logs.
+          </p>
         </motion.div>
 
         <div className="relative">
-          {/* Background Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-white/5 md:-translate-x-1/2 rounded-full" />
+          {/* Timeline node */}
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/5 md:-translate-x-1/2" />
           
-          {/* Animated Line */}
-          <motion.div 
-            className="absolute left-[20px] md:left-1/2 top-0 w-1 bg-gradient-to-b from-primary via-accent to-secondary md:-translate-x-1/2 rounded-full z-10 shadow-[0_0_10px_rgba(0,210,255,0.5)]"
-            style={{ height: lineHeight }}
-          />
+          <div className="relative flex flex-col md:flex-row items-start md:items-center">
+            
+            {/* Timeline icon indicator */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              className="absolute left-[24px] md:left-1/2 w-8 h-8 rounded-full bg-[#050816] border-2 border-cyan flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+            >
+              <Briefcase className="w-4 h-4 text-cyan" />
+            </motion.div>
 
-          <div className="space-y-16">
-            {experiences.map((exp, index) => (
-              <TimelineItem key={index} experience={exp} index={index} />
-            ))}
+            {/* Spacer */}
+            <div className="hidden md:block w-1/2" />
+
+            {/* Content card */}
+            <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -4 }}
+                className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0B1120] border border-cyan/20 relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-cyan to-primary" />
+                
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                  <span className="flex items-center gap-2 text-cyan font-sans text-xs font-semibold">
+                    <Calendar className="w-3.5 h-3.5" /> 1 Month
+                  </span>
+                  <span className="flex items-center gap-1 text-gray-500 font-sans text-xs">
+                    <MapPin className="w-3.5 h-3.5" /> Remote
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-1 font-display">Python Intern</h3>
+                <h4 className="text-sm font-semibold text-gray-300 mb-6 font-sans">Vault of Codes</h4>
+                
+                <div className="space-y-4 border-t border-white/5 pt-4">
+                  <div className="flex items-start gap-3">
+                    <Terminal className="w-4 h-4 text-cyan shrink-0 mt-1" />
+                    <p className="text-gray-300 font-sans text-sm leading-relaxed">
+                      Worked extensively on Python programming fundamentals and logic-based problem solving structures.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Terminal className="w-4 h-4 text-cyan shrink-0 mt-1" />
+                    <p className="text-gray-300 font-sans text-sm leading-relaxed">
+                      Developed basic automation scripts and expanded programming proficiency through practical coding assignments.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["Python", "Logic Building", "Scripting Automation", "Algorithms"].map((tag, idx) => (
+                    <span key={idx} className="text-[10px] md:text-xs font-sans px-2 py-0.5 bg-white/5 border border-white/5 text-cyan rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+            
           </div>
         </div>
+
       </div>
     </section>
-  );
-}
-
-function TimelineItem({ experience, index }: { experience: any, index: number }) {
-  const isEven = index % 2 === 0;
-
-  return (
-    <div className={`relative flex flex-col md:flex-row items-start md:items-center ${isEven ? 'md:flex-row-reverse' : ''}`}>
-      
-      {/* Node indicator */}
-      <motion.div 
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="absolute left-[20px] md:left-1/2 w-4 h-4 rounded-full bg-black border-2 border-primary -translate-x-[7px] md:-translate-x-1/2 z-20 shadow-[0_0_10px_rgba(0,210,255,0.8)] mt-2 md:mt-0"
-      />
-
-      {/* Content */}
-      <div className={`ml-12 md:ml-0 md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-        <motion.div
-          initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          whileHover={{ scale: 1.02 }}
-          className="glass-panel p-6 rounded-xl relative group"
-        >
-          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          <span className="text-primary font-mono text-sm mb-2 block">{experience.year}</span>
-          <h3 className="text-2xl font-bold text-white mb-1">{experience.title}</h3>
-          <h4 className="text-gray-300 font-medium mb-4">{experience.role}</h4>
-          <p className="text-gray-400 leading-relaxed text-sm">
-            {experience.desc}
-          </p>
-        </motion.div>
-      </div>
-
-    </div>
   );
 }
