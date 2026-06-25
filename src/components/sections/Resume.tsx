@@ -99,10 +99,9 @@ export default function Resume() {
               glowColor="primary"
               className="w-full flex items-center justify-center py-4 text-base text-cyan border-cyan/30"
               href="/resume.pdf"
-              download
               target="_blank"
             >
-              <Download className="w-5 h-5 mr-2" /> Download Resume PDF
+              <Download className="w-5 h-5 mr-2" /> View Resume PDF
             </HoloButton>
           </div>
 

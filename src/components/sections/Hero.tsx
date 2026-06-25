@@ -109,8 +109,8 @@ export default function Hero() {
           <HoloButton glowColor="primary" className="w-full sm:w-auto text-cyan border-cyan/20" href="#projects">
             Explore Silicon Projects
           </HoloButton>
-          <HoloButton glowColor="accent" className="w-full sm:w-auto bg-transparent border-white/10" href="/resume.pdf" download target="_blank">
-            Get Resume
+          <HoloButton glowColor="accent" className="w-full sm:w-auto bg-transparent border-white/10" href="/resume.pdf" target="_blank">
+            View Resume
           </HoloButton>
           <HoloButton glowColor="secondary" className="w-full sm:w-auto bg-transparent border-white/10" href="#contact">
             Initialize Connection

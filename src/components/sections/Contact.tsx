@@ -117,8 +117,8 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/5">
-              <HoloButton glowColor="primary" className="w-full flex justify-center py-3.5 text-xs md:text-sm text-cyan border-cyan/20" href="/resume.pdf" download target="_blank">
-                Download Resume PDF
+              <HoloButton glowColor="primary" className="w-full flex justify-center py-3.5 text-xs md:text-sm text-cyan border-cyan/20" href="/resume.pdf" target="_blank">
+                View Resume PDF
               </HoloButton>
             </div>
           </motion.div>
