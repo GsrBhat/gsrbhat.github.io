@@ -231,15 +231,25 @@ function SchematicBackground({ type }: { type: string }) {
   if (type === "barrel") {
     return (
       <svg className="w-full h-full opacity-35" viewBox="0 0 200 100">
-        <line x1="20" y1="20" x2="60" y2="50" stroke="#06B6D4" strokeWidth="1.5" />
-        <line x1="20" y1="50" x2="60" y2="50" stroke="#3B82F6" strokeWidth="1.5" />
-        <line x1="20" y1="80" x2="60" y2="50" stroke="#a855f7" strokeWidth="1.5" />
-        <polygon points="60,35 60,65 80,50" fill="none" stroke="#3B82F6" strokeWidth="1.5" />
-        <text x="66" y="53" fill="#3B82F6" fontSize="8" fontFamily="monospace">MUX</text>
+        {/* Input lines to MUX 1 */}
+        <line x1="20" y1="40" x2="60" y2="40" stroke="#06B6D4" strokeWidth="1.5" />
+        <line x1="20" y1="60" x2="60" y2="60" stroke="#3B82F6" strokeWidth="1.5" />
+        {/* Trapezoid MUX 1 */}
+        <polygon points="60,30 85,40 85,60 60,70" fill="none" stroke="#3B82F6" strokeWidth="1.5" />
+        <text x="72.5" y="53" fill="#3B82F6" fontSize="8" textAnchor="middle" fontFamily="monospace">MUX</text>
+        {/* Select line 1 */}
+        <line x1="72.5" y1="85" x2="72.5" y2="65" stroke="#a855f7" strokeWidth="1.5" />
 
-        <line x1="80" y1="50" x2="120" y2="50" stroke="#06B6D4" strokeWidth="1.5" />
-        <polygon points="120,35 120,65 140,50" fill="none" stroke="#3B82F6" strokeWidth="1.5" />
-        <text x="126" y="53" fill="#3B82F6" fontSize="8" fontFamily="monospace">MUX</text>
+        {/* Output of MUX 1 / Input to MUX 2 */}
+        <line x1="85" y1="50" x2="115" y2="50" stroke="#06B6D4" strokeWidth="1.5" />
+        <line x1="85" y1="60" x2="115" y2="60" stroke="#3B82F6" strokeWidth="1.5" />
+        {/* Trapezoid MUX 2 */}
+        <polygon points="115,30 140,40 140,60 115,70" fill="none" stroke="#3B82F6" strokeWidth="1.5" />
+        <text x="127.5" y="53" fill="#3B82F6" fontSize="8" textAnchor="middle" fontFamily="monospace">MUX</text>
+        {/* Select line 2 */}
+        <line x1="127.5" y1="85" x2="127.5" y2="65" stroke="#a855f7" strokeWidth="1.5" />
+
+        {/* Output line */}
         <line x1="140" y1="50" x2="180" y2="50" stroke="#06B6D4" strokeWidth="1.5" />
       </svg>
     );
@@ -247,11 +257,16 @@ function SchematicBackground({ type }: { type: string }) {
   if (type === "alu4") {
     return (
       <svg className="w-full h-full opacity-35" viewBox="0 0 200 100">
+        {/* ALU Wedge Body */}
         <polygon points="40,25 70,25 80,45 90,25 120,25 100,75 60,75" fill="none" stroke="#3B82F6" strokeWidth="1.5" />
-        <text x="80" y="40" fill="#3B82F6" fontSize="9" textAnchor="middle" fontFamily="monospace">ALU</text>
-        <line x1="30" y1="40" x2="55" y2="40" stroke="#06B6D4" strokeWidth="1.5" />
-        <line x1="130" y1="40" x2="105" y2="40" stroke="#06B6D4" strokeWidth="1.5" />
-        <line x1="80" y1="75" x2="80" y2="90" stroke="#a855f7" strokeWidth="1.5" />
+        <text x="80" y="55" fill="#3B82F6" fontSize="9" textAnchor="middle" fontFamily="monospace">ALU</text>
+        
+        {/* Inputs entering from the top flats */}
+        <line x1="55" y1="10" x2="55" y2="25" stroke="#06B6D4" strokeWidth="1.5" />
+        <line x1="105" y1="10" x2="105" y2="25" stroke="#06B6D4" strokeWidth="1.5" />
+        
+        {/* Output leaving from the bottom */}
+        <line x1="80" y1="75" x2="80" y2="92" stroke="#a855f7" strokeWidth="1.5" />
       </svg>
     );
   }
