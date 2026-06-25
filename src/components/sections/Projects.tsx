@@ -32,7 +32,7 @@ const projectsData: Project[] = [
       "Learned to analyze propagation delay, critical paths, and register setup/hold constraints",
       "Gained deep understanding of RISC-V datapath-control separation"
     ],
-    github: "https://github.com/GsrBhat/gsrbhat.github.io",
+    github: "https://github.com/GsrBhat",
     schematicType: "pipeline"
   },
   {
@@ -51,7 +51,7 @@ const projectsData: Project[] = [
       "Formulated mathematical tree structures for logarithmic hardware complexity reduction",
       "Identified and resolved critical timing bottlenecks in shifting networks"
     ],
-    github: "https://github.com/GsrBhat/gsrbhat.github.io",
+    github: "https://github.com/GsrBhat",
     schematicType: "barrel"
   },
   {
@@ -70,7 +70,7 @@ const projectsData: Project[] = [
       "Acquired systematic approach to hierarchical modular design validation",
       "Grasped synthesis mapping flows and logic reduction techniques"
     ],
-    github: "https://github.com/GsrBhat/gsrbhat.github.io",
+    github: "https://github.com/GsrBhat",
     schematicType: "alu4"
   },
   {
@@ -89,7 +89,7 @@ const projectsData: Project[] = [
       "Analyzed register-induced area increase vs frequency optimization trade-offs",
       "Explored frequency scaling limits and power budget impacts in digital architectures"
     ],
-    github: "https://github.com/GsrBhat/gsrbhat.github.io",
+    github: "https://github.com/GsrBhat",
     schematicType: "voyage"
   }
 ];
