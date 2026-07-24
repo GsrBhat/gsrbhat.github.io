@@ -18,15 +18,6 @@ type Paper = {
 
 const papers: Paper[] = [
   {
-    title: "FPGA-Based Real-Time Power Quality Anomaly Detection Core",
-    status: "Published / Research Paper",
-    journal: "IEEE Systems Journal / ECE Core Submission",
-    date: "2025",
-    abstract: "Proposes a synthesizable hardware core mapped to Xilinx Artix-7 FPGA fabric to identify power quality abnormalities in real-time. By implementing a hardware-level pipeline for power frequency monitoring and harmonic analysis, the architecture reduces signal classification latency by 82% compared to software-based microcontrollers.",
-    link: "/FPGA-Based Real-Time Power Quality Anomaly Detection.pdf",
-    topics: ["Verilog HDL", "FPGA Prototyping", "Power Quality Analysis", "Edge AI"]
-  },
-  {
     title: "A Low-Power 2nd-Order Sigma-Delta ADC Architecture Using Switched-Capacitor Integrators",
     status: "R&D Lab Technical Report",
     journal: "Samsung Semiconductor Lab / Anurag University",
