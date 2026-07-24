@@ -438,6 +438,61 @@ export default function Resume() {
                 </p>
               </div>
 
+
+              {/* ATS Compliance Analyzer Visualization */}
+              <div className="bg-[#070c18] border border-white/5 rounded-xl p-4 shadow-inner">
+                <div className="text-[10px] font-mono text-cyan uppercase tracking-wider mb-3 flex items-center justify-between">
+                  <span className="flex items-center gap-1.5"><Cpu className="w-3.5 h-3.5" /> ATS Parser Telemetry</span>
+                  <span className="text-emerald font-bold">98/100</span>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  {/* Radial progress ring */}
+                  <div className="relative w-14 h-14 shrink-0">
+                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        className="text-white/5"
+                        strokeWidth="3"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <motion.path
+                        className="text-cyan"
+                        strokeWidth="3"
+                        strokeDasharray="98, 100"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 0.98 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white font-mono">
+                      98%
+                    </div>
+                  </div>
+
+                  <div className="space-y-1 flex-1 font-mono text-[9px] text-gray-400">
+                    <div className="flex justify-between">
+                      <span>KEYWORD MATCH:</span>
+                      <span className="text-white">95%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>READABILITY:</span>
+                      <span className="text-white">PASS</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>STRUCTURE:</span>
+                      <span className="text-white">OPTIMIZED</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Contact Nodes */}
               <div className="space-y-3 font-sans text-xs md:text-sm">
                 <a href="mailto:gsrbhat20@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors" data-hover="true">
