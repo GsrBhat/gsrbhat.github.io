@@ -34,9 +34,9 @@ export default function HoloButton({
   };
 
   const glowColorMap = {
-    primary: "rgba(0, 229, 255, 0.6)",
-    secondary: "rgba(124, 77, 255, 0.6)",
-    accent: "rgba(0, 191, 255, 0.6)",
+    primary: "rgba(16, 185, 129, 0.6)",
+    secondary: "rgba(139, 92, 246, 0.6)",
+    accent: "rgba(245, 158, 11, 0.6)",
   };
 
   const commonProps = {

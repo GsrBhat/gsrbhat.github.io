@@ -6,6 +6,7 @@ import Preloader from "@/components/layout/Preloader";
 import FloatingDock from "@/components/ui/FloatingDock";
 import CommandPalette from "@/components/ui/CommandPalette";
 import CustomCursor from "@/components/ui/CustomCursor";
+import ResumeModal from "@/components/ui/ResumeModal";
 import Navbar from "./Navbar";
 
 function PageContainer({ children }: { children: React.ReactNode }) {
@@ -30,6 +31,7 @@ function PageContainer({ children }: { children: React.ReactNode }) {
         <>
           <FloatingDock onOpenTerminal={() => setIsTerminalOpen(true)} />
           <CommandPalette isOpen={isTerminalOpen} onClose={() => setIsTerminalOpen(false)} />
+          <ResumeModal />
         </>
       )}
     </>

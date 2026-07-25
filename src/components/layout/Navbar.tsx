@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X, Download } from "lucide-react";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 const links = [
   { name: "Home", href: "#hero" },
@@ -21,6 +22,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { setIsResumeModalOpen, triggerClick } = usePortfolio();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,16 +72,17 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <div className="hidden lg:block z-50">
-          <a 
-            href="/resume.pdf" 
-            target="_blank"
+          <button 
+            onClick={() => {
+              triggerClick();
+              setIsResumeModalOpen(true);
+            }}
             data-hover="true"
-            className="px-4 py-2 text-xs font-semibold rounded border border-cyan/40 text-cyan hover:bg-cyan/10 hover:text-white hover:border-cyan shadow-[0_0_10px_rgba(6,182,212,0.15)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300 relative overflow-hidden group inline-block font-sans"
+            className="px-4 py-2 text-xs font-semibold rounded border border-cyan/40 text-cyan hover:bg-cyan/10 hover:text-white hover:border-cyan shadow-[0_0_10px_rgba(6,182,212,0.15)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300 relative overflow-hidden group inline-block font-sans cursor-pointer"
           >
             <span className="relative z-10 transition-colors duration-300">View Resume</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -112,14 +115,16 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a 
-                href="/resume.pdf" 
-                target="_blank"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 text-sm font-semibold rounded border border-cyan/40 text-cyan text-center hover:bg-cyan/10 transition-all flex items-center justify-center gap-2"
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  triggerClick();
+                  setIsResumeModalOpen(true);
+                }}
+                className="mt-4 px-6 py-3 text-sm font-semibold rounded border border-cyan/40 text-cyan text-center hover:bg-cyan/10 transition-all flex items-center justify-center gap-2 cursor-pointer w-full bg-transparent"
               >
                 <Download className="w-4 h-4" /> View Resume
-              </a>
+              </button>
             </motion.div>
           )}
         </AnimatePresence>

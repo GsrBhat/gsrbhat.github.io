@@ -7,7 +7,7 @@ import { usePortfolio } from "@/context/PortfolioContext";
 import HoloButton from "../ui/HoloButton";
 
 export default function Contact() {
-  const { soundEnabled, triggerClick, triggerBeep, triggerTyping, triggerSuccess } = usePortfolio();
+  const { soundEnabled, triggerClick, triggerBeep, triggerTyping, triggerSuccess, setIsResumeModalOpen } = usePortfolio();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -248,7 +248,14 @@ export default function Contact() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/5">
-              <HoloButton glowColor="primary" className="w-full flex justify-center py-3.5 text-xs md:text-sm text-cyan border-cyan/20" href="/resume.pdf" target="_blank">
+              <HoloButton 
+                glowColor="primary" 
+                className="w-full flex justify-center py-3.5 text-xs md:text-sm text-cyan border-cyan/20 cursor-pointer" 
+                onClick={() => {
+                  triggerClick();
+                  setIsResumeModalOpen(true);
+                }}
+              >
                 View Resume PDF
               </HoloButton>
             </div>

@@ -7,12 +7,14 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import ChipModel from "../3d/ChipModel";
 import HoloButton from "../ui/HoloButton";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const [sparkleCount, setSparkleCount] = useState(1000);
   const [isMobile, setIsMobile] = useState(false);
+  const { setIsResumeModalOpen, triggerClick } = usePortfolio();
 
   useEffect(() => {
     // Check screen size for optimizations
@@ -109,7 +111,14 @@ export default function Hero() {
           <HoloButton glowColor="primary" className="w-full sm:w-auto text-cyan border-cyan/20" href="#projects">
             Explore Silicon Projects
           </HoloButton>
-          <HoloButton glowColor="accent" className="w-full sm:w-auto bg-transparent border-white/10" href="/resume.pdf" target="_blank">
+          <HoloButton 
+            glowColor="accent" 
+            className="w-full sm:w-auto bg-transparent border-white/10" 
+            onClick={() => {
+              triggerClick();
+              setIsResumeModalOpen(true);
+            }}
+          >
             View Resume
           </HoloButton>
           <HoloButton glowColor="secondary" className="w-full sm:w-auto bg-transparent border-white/10" href="#contact">

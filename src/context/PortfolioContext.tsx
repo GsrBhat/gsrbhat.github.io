@@ -7,9 +7,11 @@ type PortfolioContextType = {
   soundEnabled: boolean;
   humEnabled: boolean;
   isBooted: boolean;
+  isResumeModalOpen: boolean;
   setSoundEnabled: (v: boolean) => void;
   setHumEnabled: (v: boolean) => void;
   setIsBooted: (v: boolean) => void;
+  setIsResumeModalOpen: (v: boolean) => void;
   triggerClick: () => void;
   triggerBeep: (freq?: number, duration?: number, type?: OscillatorType) => void;
   triggerTyping: () => void;
@@ -22,6 +24,7 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [humEnabled, setHumEnabled] = useState(false);
   const [isBooted, setIsBooted] = useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   // Load initial sound preferences from localStorage if client side
   useEffect(() => {
@@ -58,9 +61,11 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
         soundEnabled,
         humEnabled,
         isBooted,
+        isResumeModalOpen,
         setSoundEnabled,
         setHumEnabled,
         setIsBooted,
+        setIsResumeModalOpen,
         triggerClick,
         triggerBeep,
         triggerTyping,
