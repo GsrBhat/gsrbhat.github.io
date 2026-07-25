@@ -61,48 +61,6 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
 
         {/* Controls */}
         <div className="flex items-center gap-1.5 pl-1.5">
-          {/* Sound toggle */}
-          <button
-            onClick={() => {
-              setSoundEnabled(!soundEnabled);
-              triggerClick();
-            }}
-            className={cn(
-              "p-2.5 rounded-xl transition-all duration-300 relative group border",
-              soundEnabled 
-                ? "bg-cyan/5 border-cyan/20 text-cyan hover:bg-cyan/15" 
-                : "bg-white/5 border-transparent text-gray-500 hover:text-white"
-            )}
-            title={soundEnabled ? "Mute SFX" : "Unmute SFX"}
-            data-hover="true"
-          >
-            {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
-              {soundEnabled ? "Sound: ON" : "Sound: OFF"}
-            </span>
-          </button>
-
-          {/* Ambient Hum toggle */}
-          <button
-            onClick={() => {
-              setHumEnabled(!humEnabled);
-              triggerClick();
-            }}
-            className={cn(
-              "p-2.5 rounded-xl transition-all duration-300 relative group border",
-              humEnabled && soundEnabled
-                ? "bg-indigo/5 border-indigo/20 text-indigo animate-pulse" 
-                : "bg-white/5 border-transparent text-gray-500 hover:text-white"
-            )}
-            title={humEnabled ? "Disable Ambient Hum" : "Enable Ambient Hum"}
-            data-hover="true"
-          >
-            <Activity className="w-4 h-4" />
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
-              {humEnabled ? "Hum: ACTIVE" : "Hum: IDLE"}
-            </span>
-          </button>
-
           {/* Terminal button */}
           <button
             onClick={onOpenTerminal}

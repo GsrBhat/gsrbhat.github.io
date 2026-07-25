@@ -21,7 +21,7 @@ type PortfolioContextType = {
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
 
 export function PortfolioProvider({ children }: { children: React.ReactNode }) {
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(false);
   const [humEnabled, setHumEnabled] = useState(false);
   const [isBooted, setIsBooted] = useState(false);
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
