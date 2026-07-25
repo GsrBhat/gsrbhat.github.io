@@ -167,8 +167,8 @@ export default function Projects() {
     : projectsData.filter(p => p.category === categoryFilter);
 
   return (
-    <section id="projects" className="py-20 relative bg-[#050816] overflow-hidden">
-      <div className="absolute inset-0 bg-[#050816] pointer-events-none" />
+    <section id="projects" className="py-20 relative bg-[#07070a] overflow-hidden">
+      <div className="absolute inset-0 bg-[#07070a] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-10%] w-[35%] h-[35%] rounded-full bg-cyan/5 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 max-w-6xl">
@@ -237,7 +237,7 @@ export default function Projects() {
 
 function ProjectCard({ project, index, onClick }: { project: Project; index: number; onClick: () => void }) {
   let categoryColor = "border-cyan/30 text-cyan bg-cyan/5";
-  if (project.category === "FPGA") categoryColor = "border-blue-500/30 text-blue-400 bg-blue-500/5";
+  if (project.category === "FPGA") categoryColor = "border-primary/30 text-primary bg-primary/5";
   if (project.category === "AI & Stacks") categoryColor = "border-purple/30 text-purple bg-purple/5";
   if (project.category === "FullStack") categoryColor = "border-emerald/30 text-emerald bg-emerald/5";
 
@@ -249,7 +249,7 @@ function ProjectCard({ project, index, onClick }: { project: Project; index: num
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
       onClick={onClick}
-      className="glass-panel rounded-2xl overflow-hidden bg-[#0B1120] border-white/5 cursor-pointer relative group flex flex-col justify-between min-h-[350px]"
+      className="glass-panel rounded-2xl overflow-hidden bg-[#0f0f15] border-white/5 cursor-pointer relative group flex flex-col justify-between min-h-[350px]"
     >
       {/* Visual Header Grid representation */}
       <div className="h-36 bg-[#070c18] relative overflow-hidden flex items-center justify-center border-b border-white/5">
@@ -439,7 +439,7 @@ function ProjectDetailOverlay({ project, onClose }: { project: Project; onClose:
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 30 }}
         transition={{ type: "spring", duration: 0.5 }}
-        className="w-full max-w-4xl bg-[#070c18] border border-cyan/20 rounded-3xl overflow-hidden max-h-[92vh] flex flex-col relative"
+        className="w-full max-w-4xl bg-[#0f0f15] border border-cyan/20 rounded-3xl overflow-hidden max-h-[92vh] flex flex-col relative"
       >
         {/* Close Button */}
         <button
@@ -450,7 +450,7 @@ function ProjectDetailOverlay({ project, onClose }: { project: Project; onClose:
         </button>
 
         {/* Blueprint background header */}
-        <div className="h-44 bg-[#0B1120] relative overflow-hidden flex items-center justify-center border-b border-white/5 shrink-0 select-none">
+        <div className="h-44 bg-[#12121a] relative overflow-hidden flex items-center justify-center border-b border-white/5 shrink-0 select-none">
           <div className="absolute inset-0 blueprint-grid opacity-20" />
           <div className="text-center z-10">
             <span className="text-[10px] font-mono tracking-widest text-cyan uppercase font-bold px-2 py-0.5 rounded bg-cyan/5 border border-cyan/20">

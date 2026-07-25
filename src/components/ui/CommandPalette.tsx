@@ -173,10 +173,10 @@ export default function CommandPalette({
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.95, y: 15 }}
             transition={{ type: "spring", duration: 0.4 }}
-            className="w-full max-w-2xl bg-[#070c18] border border-cyan/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.15)] flex flex-col h-[55vh]"
+            className="w-full max-w-2xl bg-[#0f0f15] border border-cyan/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(16,185,129,0.15)] flex flex-col h-[55vh]"
           >
             {/* Terminal Header */}
-            <div className="px-4 py-3 bg-[#0B1120] border-b border-white/5 flex items-center justify-between shrink-0 select-none">
+            <div className="px-4 py-3 bg-[#12121a] border-b border-white/5 flex items-center justify-between shrink-0 select-none">
               <div className="flex items-center gap-2 text-cyan font-mono text-xs font-bold">
                 <TerminalIcon className="w-4 h-4" />
                 <span>visitor@saios_core:~$ shell console</span>
@@ -202,7 +202,7 @@ export default function CommandPalette({
                 <button
                   key={cmd}
                   onClick={() => handleAutofill(cmd)}
-                  className="px-2 py-0.5 rounded bg-[#0B1120] border border-white/5 text-[10px] font-mono text-cyan hover:bg-cyan/15 hover:border-cyan/35 transition-all"
+                  className="px-2 py-0.5 rounded bg-[#0f0f15] border border-white/5 text-[10px] font-mono text-cyan hover:bg-cyan/15 hover:border-cyan/35 transition-all"
                   data-hover="true"
                 >
                   {cmd}
@@ -238,7 +238,7 @@ export default function CommandPalette({
             </div>
 
             {/* Command Input Bar */}
-            <div className="px-6 py-4 bg-[#0B1120] border-t border-white/5 flex items-center gap-2 shrink-0">
+            <div className="px-6 py-4 bg-[#12121a] border-t border-white/5 flex items-center gap-2 shrink-0">
               <span className="text-cyan font-mono text-xs md:text-sm font-bold shrink-0">$</span>
               <input
                 ref={inputRef}

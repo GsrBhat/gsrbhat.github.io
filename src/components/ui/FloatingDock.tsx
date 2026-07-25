@@ -32,7 +32,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100, damping: 18, delay: 0.5 }}
-        className="glass-panel px-4 py-3 rounded-2xl flex items-center gap-2 bg-[#0B1120]/80 border-white/5 shadow-2xl relative overflow-hidden backdrop-blur-xl"
+        className="glass-panel px-4 py-3 rounded-2xl flex items-center gap-2 bg-[#0f0f15]/80 border-white/5 shadow-2xl relative overflow-hidden backdrop-blur-xl"
       >
         {/* Glow backdrop line */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
@@ -52,7 +52,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
             >
               {item.icon}
               {/* Tooltip */}
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#050816] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
+              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
                 {item.label}
               </span>
             </a>
@@ -77,7 +77,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
             data-hover="true"
           >
             {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#050816] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
               {soundEnabled ? "Sound: ON" : "Sound: OFF"}
             </span>
           </button>
@@ -98,7 +98,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
             data-hover="true"
           >
             <Activity className="w-4 h-4" />
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#050816] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
               {humEnabled ? "Hum: ACTIVE" : "Hum: IDLE"}
             </span>
           </button>
@@ -111,7 +111,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
             data-hover="true"
           >
             <Terminal className="w-4 h-4" />
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#050816] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
               Console Shell
             </span>
           </button>
@@ -124,7 +124,7 @@ export default function FloatingDock({ onOpenTerminal }: { onOpenTerminal: () =>
             data-hover="true"
           >
             <ArrowUp className="w-4 h-4" />
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#050816] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#07070a] border border-white/10 text-[9px] font-mono text-cyan rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all pointer-events-none whitespace-nowrap">
               Core Return
             </span>
           </button>

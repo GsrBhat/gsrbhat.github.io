@@ -35,7 +35,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" ref={containerRef} className="py-20 relative bg-[#050816] overflow-hidden">
+    <section id="about" ref={containerRef} className="py-20 relative bg-[#07070a] overflow-hidden">
       
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
@@ -98,10 +98,10 @@ function Card({ card, index }: { card: any; index: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -6, scale: 1.02 }}
-      className="glass-panel p-6 rounded-xl relative overflow-hidden group bg-[#0B1120] border-white/5"
+      className="glass-panel p-6 rounded-xl relative overflow-hidden group bg-[#0f0f15] border-white/5"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-      <div className="mb-4 p-3 bg-white/5 rounded-lg inline-block shadow-[0_0_15px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-shadow">
+      <div className="mb-4 p-3 bg-white/5 rounded-lg inline-block shadow-[0_0_15px_rgba(16,185,129,0.1)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-shadow">
         {card.icon}
       </div>
       <h3 className="text-lg font-bold text-white mb-1 font-display leading-tight">{card.title}</h3>

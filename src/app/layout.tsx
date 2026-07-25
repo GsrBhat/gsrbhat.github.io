@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Sai Rahul Bhat | VLSI & Full-Stack Engineer",
-  description: "Premium cyber-futuristic personal portfolio of Sai Rahul Bhat - Electronics & Communication Engineering student, VLSI Designer, AI Developer, and Full Stack Developer.",
+  description: "Premium personal portfolio of Sai Rahul Bhat - Electronics & Communication Engineering student, VLSI Designer, AI Developer, and Full Stack Developer. Structured in an Obsidian Green & Copper Amber theme.",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} dark scroll-smooth`}
       style={{ colorScheme: "dark" }}
     >
-      <body className={`${inter.className} min-h-screen bg-[#050816] text-[#e8eaf0] overflow-x-hidden selection:bg-[#06B6D4] selection:text-black`}>
+      <body className={`${inter.className} min-h-screen bg-[#07070a] text-[#e2e8f0] overflow-x-hidden selection:bg-[#10B981] selection:text-black`}>
         <SmoothScroller>
           <MainLayoutWrapper>
             {children}

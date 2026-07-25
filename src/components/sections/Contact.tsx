@@ -154,7 +154,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative bg-[#050816] overflow-hidden">
+    <section id="contact" className="py-20 relative bg-[#07070a] overflow-hidden">
       
       {/* Background Grids and Blobs */}
       <div className="absolute inset-0 blueprint-grid opacity-15 pointer-events-none" />
@@ -187,7 +187,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-5/12 glass-panel p-6 md:p-8 rounded-2xl border-white/5 bg-[#0B1120] relative overflow-hidden flex flex-col justify-between"
+            className="w-full lg:w-5/12 glass-panel p-6 md:p-8 rounded-2xl border-white/5 bg-[#0f0f15] relative overflow-hidden flex flex-col justify-between"
           >
             <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-cyan to-primary" />
             
@@ -196,7 +196,7 @@ export default function Contact() {
               
               <div className="space-y-5">
                 <a href="mailto:gsrbhat20@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-cyan transition-all group font-sans" data-hover="true" onClick={triggerClick}>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
@@ -206,7 +206,7 @@ export default function Contact() {
                 </a>
 
                 <a href="tel:+917989035770" className="flex items-center gap-4 text-gray-300 hover:text-cyan transition-all group font-sans" data-hover="true" onClick={triggerClick}>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
@@ -216,7 +216,7 @@ export default function Contact() {
                 </a>
 
                 <a href="https://www.linkedin.com/in/sairahulbhatg/" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-cyan transition-all group font-sans" data-hover="true" onClick={triggerClick}>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] shrink-0">
                     <User className="w-4 h-4" />
                   </div>
                   <div>
@@ -226,7 +226,7 @@ export default function Contact() {
                 </a>
 
                 <a href="https://github.com/GsrBhat" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-cyan transition-all group font-sans" data-hover="true" onClick={triggerClick}>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:border-cyan group-hover:bg-cyan/5 transition-all group-hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] shrink-0">
                     <Code className="w-4 h-4" />
                   </div>
                   <div>
@@ -260,7 +260,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-7/12 glass-panel p-6 md:p-8 rounded-2xl border-white/5 bg-[#0B1120] relative flex flex-col justify-between"
+            className="w-full lg:w-7/12 glass-panel p-6 md:p-8 rounded-2xl border-white/5 bg-[#0f0f15] relative flex flex-col justify-between"
           >
             {/* Mode Switcher */}
             <div className="flex justify-end gap-2 mb-4 shrink-0 select-none">
@@ -324,7 +324,7 @@ export default function Contact() {
                         type="text" 
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
-                        className="w-full bg-[#050816] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
+                        className="w-full bg-[#07070a] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
                         placeholder="Enter your name"
                       />
                     </div>
@@ -335,7 +335,7 @@ export default function Contact() {
                         type="email" 
                         value={formEmail}
                         onChange={(e) => setFormEmail(e.target.value)}
-                        className="w-full bg-[#050816] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
+                        className="w-full bg-[#07070a] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
                         placeholder="Enter your email"
                       />
                     </div>
@@ -348,7 +348,7 @@ export default function Contact() {
                       type="text" 
                       value={formSubject}
                       onChange={(e) => setFormSubject(e.target.value)}
-                      className="w-full bg-[#050816] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
+                      className="w-full bg-[#07070a] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all font-sans"
                       placeholder="Enter subject"
                     />
                   </div>
@@ -359,14 +359,14 @@ export default function Contact() {
                       required
                       value={formMessage}
                       onChange={(e) => setFormMessage(e.target.value)}
-                      className="w-full min-h-[120px] bg-[#050816] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all resize-none font-sans"
+                      className="w-full min-h-[120px] bg-[#07070a] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs md:text-sm focus:outline-none focus:border-cyan focus:bg-cyan/5 transition-all resize-none font-sans"
                       placeholder="Type your message details..."
                     ></textarea>
                   </div>
 
                   <button 
                     disabled={isSubmitting}
-                    className="w-full relative overflow-hidden px-8 py-3.5 rounded-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-primary to-cyan hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] group disabled:opacity-75 disabled:cursor-not-allowed text-xs md:text-sm font-display tracking-wider uppercase flex items-center justify-center gap-2"
+                    className="w-full relative overflow-hidden px-8 py-3.5 rounded-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-primary to-cyan hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] group disabled:opacity-75 disabled:cursor-not-allowed text-xs md:text-sm font-display tracking-wider uppercase flex items-center justify-center gap-2"
                     data-hover="true"
                   >
                     {isSubmitting ? (
@@ -415,7 +415,7 @@ export default function Contact() {
                   </div>
 
                   {/* Input bar */}
-                  <div className="bg-[#050816] border-x border-b border-white/5 rounded-b-xl px-4 py-3 flex items-center gap-2">
+                  <div className="bg-[#07070a] border-x border-b border-white/5 rounded-b-xl px-4 py-3 flex items-center gap-2">
                     <span className="text-cyan font-mono text-xs md:text-sm font-bold">$</span>
                     <input
                       type="text"

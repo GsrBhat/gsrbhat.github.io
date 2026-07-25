@@ -322,7 +322,7 @@ export default function Resume() {
   };
 
   return (
-    <section id="resume" className="py-20 relative bg-[#050816] overflow-hidden">
+    <section id="resume" className="py-20 relative bg-[#07070a] overflow-hidden">
       {/* Background Silicon Blueprint Pattern */}
       <div className="absolute inset-0 blueprint-grid opacity-15 pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan/20 to-transparent" />
@@ -351,7 +351,7 @@ export default function Resume() {
 
         {/* Dual Console Mode Switcher */}
         <div className="flex justify-center mb-10">
-          <div className="p-1 rounded-xl bg-[#0B1120] border border-white/5 flex relative max-w-md w-full shadow-lg">
+          <div className="p-1 rounded-xl bg-[#0f0f15] border border-white/5 flex relative max-w-md w-full shadow-lg">
             <button
               onClick={() => {
                 setActiveTab("vlsi");
@@ -398,7 +398,7 @@ export default function Resume() {
           initial={{ opacity: 0, x: activeTab === "vlsi" ? -20 : 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
-          className="glass-panel p-6 md:p-10 rounded-2xl bg-[#0B1120] border border-white/5 flex flex-col lg:flex-row gap-8 relative overflow-hidden"
+          className="glass-panel p-6 md:p-10 rounded-2xl bg-[#0f0f15] border border-white/5 flex flex-col lg:flex-row gap-8 relative overflow-hidden"
         >
           {/* Active Accent Border Strip */}
           <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${
@@ -429,7 +429,7 @@ export default function Resume() {
               </div>
 
               {/* Bio summary */}
-              <div className="bg-[#070c18] border border-white/5 rounded-xl p-4 shadow-inner">
+              <div className="bg-[#0f0f15] border border-white/5 rounded-xl p-4 shadow-inner">
                 <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                   <FileText className="w-3.5 h-3.5" /> Transmitter Bio
                 </div>
@@ -440,7 +440,7 @@ export default function Resume() {
 
 
               {/* ATS Compliance Analyzer Visualization */}
-              <div className="bg-[#070c18] border border-white/5 rounded-xl p-4 shadow-inner">
+              <div className="bg-[#0f0f15] border border-white/5 rounded-xl p-4 shadow-inner">
                 <div className="text-[10px] font-mono text-cyan uppercase tracking-wider mb-3 flex items-center justify-between">
                   <span className="flex items-center gap-1.5"><Cpu className="w-3.5 h-3.5" /> ATS Parser Telemetry</span>
                   <span className="text-emerald font-bold">98/100</span>

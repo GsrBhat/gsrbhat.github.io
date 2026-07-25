@@ -10,7 +10,7 @@ const educationHistory = [
     duration: "2024 – Till Date",
     cgpa: "8.01",
     coursework: ["Digital Electronics", "Analog Electronics", "Signals & Systems", "Semiconductor Devices", "VLSI Design"],
-    color: "from-blue-500/20 to-blue-900/10 border-blue-500/30"
+    color: "from-purple/15 to-purple/5 border-purple/25"
   },
   {
     institution: "JNGPT, Ramanthapur",
@@ -18,13 +18,13 @@ const educationHistory = [
     duration: "2021 – 2024",
     cgpa: "9.17",
     coursework: ["Core Electronics Fundamentals", "Microprocessors", "Circuit Theory", "Embedded Systems Basics"],
-    color: "from-cyan-500/20 to-cyan-900/10 border-cyan-500/30"
+    color: "from-cyan/15 to-cyan/5 border-cyan/25"
   }
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 relative bg-[#050816] blueprint-grid">
+    <section id="education" className="py-20 relative bg-[#07070a] blueprint-grid">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         
         <motion.div

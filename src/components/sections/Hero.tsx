@@ -47,14 +47,14 @@ export default function Hero() {
   const nameParts = "Sai Rahul Bhat".split('');
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050816] blueprint-grid">
+    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#07070a] blueprint-grid">
       
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 8], fov: 45 }} gl={{ antialias: !isMobile }}>
           <ambientLight intensity={0.2} />
-          <directionalLight position={[10, 10, 5]} intensity={1.5} color="#3B82F6" />
-          <spotLight position={[-10, 10, 10]} angle={0.3} penumbra={1} intensity={2.5} color="#6366F1" />
+          <directionalLight position={[10, 10, 5]} intensity={1.5} color="#10B981" />
+          <spotLight position={[-10, 10, 10]} angle={0.3} penumbra={1} intensity={2.5} color="#8B5CF6" />
           
           {!isMobile && (
             <Float speed={1.5} rotationIntensity={0.4} floatIntensity={1.5}>
@@ -62,7 +62,7 @@ export default function Hero() {
             </Float>
           )}
           
-          <Sparkles count={sparkleCount} scale={15} size={1.2} speed={0.3} color="#06B6D4" opacity={0.5} />
+          <Sparkles count={sparkleCount} scale={15} size={1.2} speed={0.3} color="#10B981" opacity={0.5} />
           
           <Environment preset="city" />
           <Preload all />

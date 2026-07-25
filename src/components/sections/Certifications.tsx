@@ -32,7 +32,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-20 relative bg-[#050816] overflow-hidden">
+    <section id="certifications" className="py-20 relative bg-[#07070a] overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         
         <motion.div
@@ -75,10 +75,10 @@ function CertCard({ cert, index }: { cert: any; index: number }) {
       
       <div>
         <div className="flex items-start justify-between gap-4 mb-4">
-          <div className="p-3 bg-black/40 rounded-xl border border-white/5 inline-block shrink-0 shadow-inner group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all">
+          <div className="p-3 bg-black/40 rounded-xl border border-white/5 inline-block shrink-0 shadow-inner group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all">
             <Award className="w-6 h-6 text-cyan" />
           </div>
-          <span className="text-[10px] font-mono font-bold tracking-widest text-cyan uppercase bg-[#050816] px-2.5 py-1 rounded border border-cyan/20 flex items-center gap-1.5 backdrop-blur-md">
+          <span className="text-[10px] font-mono font-bold tracking-widest text-cyan uppercase bg-[#07070a] px-2.5 py-1 rounded border border-cyan/20 flex items-center gap-1.5 backdrop-blur-md">
             <div className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" /> Verified
           </span>
         </div>

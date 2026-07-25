@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050810] border-t border-white/5 py-10 relative overflow-hidden">
+    <footer className="bg-[#07070a] border-t border-white/5 py-10 relative overflow-hidden">
       
       {/* Dynamic line glow */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Left: Animated Initials Chip */}
         <div className="flex flex-col items-center md:items-start gap-4">
           <a href="#hero" className="relative group block" data-hover="true">
-            <div className="border border-cyan/40 px-3 py-1 bg-cyan/5 rounded font-black font-display text-white text-lg tracking-wider flex items-center gap-1.5 shadow-[0_0_10px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all">
+            <div className="border border-cyan/40 px-3 py-1 bg-cyan/5 rounded font-black font-display text-white text-lg tracking-wider flex items-center gap-1.5 shadow-[0_0_10px_rgba(16,185,129,0.1)] group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all">
               <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
               SRB<span className="text-cyan">.</span>IO
             </div>

@@ -35,7 +35,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b backdrop-blur-md",
         scrolled 
-          ? "bg-[#050816]/90 border-[#3B82F6]/20 py-3 shadow-[0_4px_30px_rgba(59,130,246,0.05)]" 
+          ? "bg-[#07070a]/90 border-primary/20 py-3 shadow-[0_4px_30px_rgba(16,185,129,0.05)]" 
           : "bg-transparent border-transparent py-5"
       )}
       initial={{ y: -100 }}
@@ -100,7 +100,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] bg-[#050816]/95 border-l border-white/5 backdrop-blur-2xl z-40 flex flex-col p-8 pt-24 gap-6"
+              className="fixed top-0 right-0 bottom-0 w-[280px] bg-[#07070a]/95 border-l border-white/5 backdrop-blur-2xl z-40 flex flex-col p-8 pt-24 gap-6"
             >
               {links.map((link) => (
                 <a

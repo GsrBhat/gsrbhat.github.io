@@ -5,7 +5,7 @@ import { Briefcase, Calendar, MapPin, Terminal } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-[#050816] relative overflow-hidden blueprint-grid">
+    <section id="experience" className="py-20 bg-[#07070a] relative overflow-hidden blueprint-grid">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-4xl relative z-10">
         
         <motion.div
@@ -35,7 +35,7 @@ export default function Experience() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 200, damping: 10 }}
-              className="absolute left-[24px] md:left-1/2 w-8 h-8 rounded-full bg-[#050816] border-2 border-cyan flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+              className="absolute left-[24px] md:left-1/2 w-8 h-8 rounded-full bg-[#07070a] border-2 border-cyan flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(16,185,129,0.6)]"
             >
               <Briefcase className="w-4 h-4 text-cyan" />
             </motion.div>
@@ -51,7 +51,7 @@ export default function Experience() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -4 }}
-                className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0B1120] border border-cyan/20 relative overflow-hidden"
+                className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0f0f15] border border-cyan/20 relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-cyan to-primary" />
                 

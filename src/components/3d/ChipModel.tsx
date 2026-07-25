@@ -28,7 +28,7 @@ export default function ChipModel() {
       <mesh>
         <boxGeometry args={[3, 0.2, 3]} />
         <meshStandardMaterial color="#050505" roughness={0.7} metalness={0.8} />
-        <Edges scale={1} threshold={15} color="#00d2ff" />
+        <Edges scale={1} threshold={15} color="#10B981" />
       </mesh>
 
       {/* Inner Core */}
@@ -36,7 +36,7 @@ export default function ChipModel() {
         <boxGeometry args={[1.5, 0.1, 1.5]} />
         <meshStandardMaterial 
           color="#000" 
-          emissive="#00d2ff" 
+          emissive="#10B981" 
           emissiveIntensity={1} 
           roughness={0.2} 
           metalness={1} 

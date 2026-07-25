@@ -55,7 +55,7 @@ export default function Research() {
   const { triggerClick } = usePortfolio();
 
   return (
-    <section id="research" className="py-20 bg-[#050816] relative overflow-hidden">
+    <section id="research" className="py-20 bg-[#07070a] relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 blueprint-grid opacity-10 pointer-events-none" />
       <div className="absolute top-[30%] right-[-10%] w-[35%] h-[35%] rounded-full bg-purple/5 blur-[120px] pointer-events-none" />
@@ -95,7 +95,7 @@ export default function Research() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   whileHover={{ x: 6 }}
-                  className="glass-panel p-5 rounded-xl bg-[#0B1120] border-white/5 relative flex gap-4 items-start"
+                  className="glass-panel p-5 rounded-xl bg-[#0f0f15] border-white/5 relative flex gap-4 items-start"
                 >
                   <div className="p-2 bg-white/5 border border-white/5 rounded-lg shrink-0">
                     {interest.icon}
@@ -152,7 +152,7 @@ export default function Research() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.15 }}
-                  className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0B1120] border-white/5 relative group"
+                  className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0f0f15] border-white/5 relative group"
                 >
                   {/* Category badge */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-white/5 pb-4">

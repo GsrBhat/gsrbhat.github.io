@@ -134,15 +134,15 @@ export default function Skills() {
       // Draw Orbit Center Silicon Chip Representation
       ctx.beginPath();
       ctx.arc(centerX, centerY, 30, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(11, 17, 32, 0.9)";
-      ctx.strokeStyle = "rgba(6, 182, 212, 0.4)";
+      ctx.fillStyle = "rgba(15, 15, 21, 0.9)";
+      ctx.strokeStyle = "rgba(16, 185, 129, 0.4)";
       ctx.lineWidth = 2;
       ctx.fill();
       ctx.stroke();
       
       // Draw details on center chip
       ctx.font = "bold 9px monospace";
-      ctx.fillStyle = "#06B6D4";
+      ctx.fillStyle = "#10B981";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("CORE", centerX, centerY - 5);
@@ -164,7 +164,7 @@ export default function Skills() {
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(x2d, y2d);
         ctx.strokeStyle = node.name === selectedSkill.name
-          ? "rgba(6, 182, 212, 0.25)"
+          ? "rgba(16, 185, 129, 0.25)"
           : "rgba(255, 255, 255, 0.02)";
         ctx.lineWidth = 1;
         ctx.stroke();
@@ -173,10 +173,11 @@ export default function Skills() {
         ctx.beginPath();
         ctx.arc(x2d, y2d, 5 * scale + (node.name === selectedSkill.name ? 3 : 0), 0, Math.PI * 2);
         
-        let color = "#3B82F6"; // VLSI
-        if (node.category === "Programming") color = "#06B6D4";
-        if (node.category === "AI") color = "#a855f7";
-        if (node.category === "FullStack") color = "#10B981";
+        let color = "#F59E0B"; // VLSI - Amber
+        if (node.category === "Programming") color = "#10B981"; // Programming - Green
+        if (node.category === "AI") color = "#8B5CF6"; // AI - Purple
+        if (node.category === "FullStack") color = "#e2e8f0"; // FullStack - Silver
+
 
         ctx.fillStyle = color;
         ctx.shadowBlur = node.name === selectedSkill.name ? 15 : 0;
@@ -287,7 +288,7 @@ export default function Skills() {
     : skillList.filter(s => s.category === categoryFilter);
 
   return (
-    <section id="skills" className="py-20 relative bg-[#050816] overflow-hidden">
+    <section id="skills" className="py-20 relative bg-[#07070a] overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 max-w-6xl">
@@ -375,7 +376,7 @@ export default function Skills() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0B1120] border-cyan/20 relative overflow-hidden"
+                  className="glass-panel p-6 md:p-8 rounded-2xl bg-[#0f0f15] border-cyan/20 relative overflow-hidden"
                 >
                   {/* Status Indicator */}
                   <div className="flex items-center justify-between mb-6">
@@ -462,8 +463,8 @@ export default function Skills() {
                     triggerBeep(700, 0.05, "sine");
                     setSelectedSkill(skill);
                   }}
-                  className={`glass-panel p-5 rounded-xl bg-[#0B1120] border cursor-pointer relative group flex flex-col justify-between min-h-[140px] ${
-                    selectedSkill.name === skill.name ? "border-cyan/50 shadow-[0_0_15px_rgba(6,182,212,0.15)]" : "border-white/5"
+                  className={`glass-panel p-5 rounded-xl bg-[#0f0f15] border cursor-pointer relative group flex flex-col justify-between min-h-[140px] ${
+                    selectedSkill.name === skill.name ? "border-cyan/50 shadow-[0_0_15px_rgba(245,158,11,0.15)]" : "border-white/5"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-3">

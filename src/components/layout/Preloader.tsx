@@ -81,7 +81,7 @@ export default function Preloader() {
     <AnimatePresence>
       {!isBooted && (
         <motion.div
-          className="fixed inset-0 bg-[#050816] z-50 flex flex-col items-center justify-center p-4 scanlines"
+          className="fixed inset-0 bg-[#07070a] z-50 flex flex-col items-center justify-center p-4 scanlines"
           exit={{ 
             opacity: 0, 
             scale: 1.05,
@@ -108,7 +108,7 @@ export default function Preloader() {
             {/* Hologram Chip Assembling Graphic */}
             <div className="relative w-36 h-36 flex items-center justify-center">
               <motion.div
-                className="absolute inset-0 rounded-2xl border border-cyan/20 bg-cyan/5 flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.1)]"
+                className="absolute inset-0 rounded-2xl border border-cyan/20 bg-cyan/5 flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.1)]"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               />
@@ -119,7 +119,7 @@ export default function Preloader() {
               />
               {/* Inner Chip Die */}
               <motion.div
-                className="w-16 h-16 bg-[#0B1120] border-2 border-cyan/50 flex items-center justify-center rounded-lg shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+                className="w-16 h-16 bg-[#0f0f15] border-2 border-cyan/50 flex items-center justify-center rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.4)]"
                 initial={{ scale: 0.1, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.5, type: "spring", stiffness: 100 }}

@@ -37,7 +37,7 @@ const milestones: Milestone[] = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 relative bg-[#050816] blueprint-grid">
+    <section id="achievements" className="py-20 relative bg-[#07070a] blueprint-grid">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
         
         <motion.div
@@ -105,7 +105,7 @@ function MilestoneCard({ item, index }: { item: Milestone; index: number }) {
       </div>
 
       <div className="flex items-start gap-4 mb-6">
-        <div className="p-3 bg-black/40 rounded-xl border border-white/5 inline-block shrink-0 shadow-inner group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all">
+        <div className="p-3 bg-black/40 rounded-xl border border-white/5 inline-block shrink-0 shadow-inner group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all">
           {item.icon}
         </div>
         <div>
