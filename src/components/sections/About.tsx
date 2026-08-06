@@ -11,7 +11,7 @@ export default function About() {
     {
       title: "B.Tech in ECE",
       subtitle: "Anurag University, Hyderabad",
-      desc: "2024 – Till Date. CGPA: 8.01. Immersed in VLSI design, semiconductor devices, and digital electronics.",
+      desc: "2024 – Till Date. CGPA: 7.95. Immersed in VLSI design, semiconductor devices, and digital electronics.",
       icon: <GraduationCap className="w-6 h-6 text-primary" />
     },
     {

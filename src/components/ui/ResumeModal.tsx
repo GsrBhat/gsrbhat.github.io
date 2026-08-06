@@ -19,12 +19,8 @@ export default function ResumeModal() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isResumeModalOpen, setIsResumeModalOpen]);
 
-  const selectResume = (track: "it" | "core") => {
-    triggerBeep(1000, 0.08, "sine");
+  const selectResume = () => {
     setIsResumeModalOpen(false);
-    
-    const fileLink = track === "it" ? "/resume-software.pdf" : "/resume-vlsi.pdf";
-    window.open(fileLink, "_blank");
   };
 
   return (
@@ -75,10 +71,12 @@ export default function ResumeModal() {
             <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* IT / Software Card */}
-              <motion.div
+              <motion.a
                 whileHover={{ y: -4, scale: 1.02 }}
-                onClick={() => selectResume("it")}
-                className="glass-panel p-5 rounded-xl bg-[#12121a]/60 border border-white/5 cursor-pointer relative group flex flex-col justify-between h-44 hover:border-primary/45 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all duration-300"
+                href="/resume-software.pdf"
+                target="_blank"
+                onClick={selectResume}
+                className="glass-panel p-5 rounded-xl bg-[#12121a]/60 border border-white/5 cursor-pointer relative group flex flex-col justify-between h-44 hover:border-primary/45 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] transition-all duration-300 no-underline"
                 data-hover="true"
               >
                 <div>
@@ -96,13 +94,15 @@ export default function ResumeModal() {
                   <span>LOAD COMPILED STACK</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
-              </motion.div>
+              </motion.a>
 
               {/* Core / VLSI Card */}
-              <motion.div
+              <motion.a
                 whileHover={{ y: -4, scale: 1.02 }}
-                onClick={() => selectResume("core")}
-                className="glass-panel p-5 rounded-xl bg-[#12121a]/60 border border-white/5 cursor-pointer relative group flex flex-col justify-between h-44 hover:border-cyan/45 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-all duration-300"
+                href="/resume-vlsi.pdf"
+                target="_blank"
+                onClick={selectResume}
+                className="glass-panel p-5 rounded-xl bg-[#12121a]/60 border border-white/5 cursor-pointer relative group flex flex-col justify-between h-44 hover:border-cyan/45 hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-all duration-300 no-underline"
                 data-hover="true"
               >
                 <div>
@@ -120,7 +120,7 @@ export default function ResumeModal() {
                   <span>LOAD HARDWARE SCHEMATIC</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>
-              </motion.div>
+              </motion.a>
 
             </div>
 

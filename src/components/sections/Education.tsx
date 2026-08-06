@@ -8,7 +8,7 @@ const educationHistory = [
     institution: "Anurag University, Hyderabad",
     degree: "B.Tech in Electronics and Communication Engineering",
     duration: "2024 – Till Date",
-    cgpa: "8.01",
+    cgpa: "7.95",
     coursework: ["Digital Electronics", "Analog Electronics", "Signals & Systems", "Semiconductor Devices", "VLSI Design"],
     color: "from-purple/15 to-purple/5 border-purple/25"
   },
